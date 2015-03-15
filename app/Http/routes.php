@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+Route::group(['prefix' => '/', 'namespace' => 'Home'], function()
+{
+    Route::get('/', 'ItemListComtroller@index');
+});
 
 Route::get('home', 'HomeController@index');
 
