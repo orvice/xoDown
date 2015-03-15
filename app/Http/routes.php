@@ -14,6 +14,7 @@
 Route::group(['prefix' => '/', 'namespace' => 'Home'], function()
 {
     Route::get('/', 'ItemListController@index');
+    Route::get('item', 'ItemListController@index');
 });
 
 Route::get('home', 'HomeController@index');
