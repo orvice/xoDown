@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Xo\Item\Item;
 
 class ItemListController extends Controller {
 
@@ -15,6 +16,9 @@ class ItemListController extends Controller {
 	public function index()
 	{
 		//
+        return view('Home.ItemList',[
+            'ItemList' => Item::All()
+        ]);
 	}
 
 	/**
