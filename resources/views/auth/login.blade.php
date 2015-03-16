@@ -5,9 +5,10 @@
 <body class="login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="../../index2.html"><b>登录</b></a>
+        <a href="#"><b>登录</b></a>
     </div><!-- /.login-logo -->
     <div class="login-box-body">
+
         @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -22,7 +23,7 @@
         <form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group has-feedback">
-                <input type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
+                <input type="text" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -60,8 +61,6 @@
 <script src="{{ asset('/js/jquery.min.js') }}"></script>
 <!-- Bootstrap 3.3.2 JS -->
 <script src="{{ asset('/js/bootstrap.min.js') }}" type="text/javascript"></script>
-<!-- AdminLTE App -->
-<script src="{{ asset('/js/app.min.js') }}" type="text/javascript"></script>
 <!-- iCheck -->
 <script src="{{ asset('/plugins/iCheck/icheck.min.js') }}" type="text/javascript"></script>
 <script>
