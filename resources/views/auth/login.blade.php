@@ -20,6 +20,7 @@
             </div>
         @endif
 
+            <p class="login-box-msg">输入您的邮箱和密码</p>
             <form  method="POST" action="{{ url('/auth/login') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="form-group has-feedback">
@@ -44,8 +45,8 @@
                 </div>
             </form>
 
-        <a href="{{ url('/password/email') }}" >忘记密码</a>|<a href="{{ url('/auth/register') }}" class="text-center">注册</a>
-
+       <p> <a href="{{ url('/password/email') }}" >忘记密码</a>|<a href="{{ url('/auth/register') }}" class="text-center">注册</a></p>
+      <p><a href="{{ url('/') }}" class="text-center">返回首页</a></p>
     </div><!-- /.login-box-body -->
 </div><!-- /.login-box -->
 
