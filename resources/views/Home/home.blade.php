@@ -22,7 +22,7 @@
                     <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">课件数</span>
-                        <span class="info-box-number">90<small>%</small></span>
+                        <span class="info-box-number">90</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div><!-- /.col -->
@@ -511,8 +511,8 @@
                         </div><!-- /.table-responsive -->
                     </div><!-- /.box-body -->
                     <div class="box-footer clearfix">
-                        <a href="javascript::;" class="btn btn-sm btn-info btn-flat pull-left">Place New Order</a>
-                        <a href="javascript::;" class="btn btn-sm btn-default btn-flat pull-right">View All Orders</a>
+                        <a href="{{ url('/forum/new') }}" class="btn btn-sm btn-info btn-flat pull-left">发帖</a>
+                        <a href="{{ url('/forum') }}" class="btn btn-sm btn-default btn-flat pull-right">进入论坛</a>
                     </div><!-- /.box-footer -->
                 </div><!-- /.box -->
             </div><!-- /.col -->
