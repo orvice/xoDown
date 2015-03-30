@@ -38,36 +38,47 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <div class="navbar-custom-menu">
-                <ul class="nav navbar-nav">
-                    <!-- User Account: style can be found in dropdown.less -->
-                    <li class="dropdown user user-menu">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('/img/avatar.png') }}" class="user-image" alt="User Image"/>
-                            <span class="hidden-xs">Alexander Pierce</span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <!-- User image -->
-                            <li class="user-header">
-                                <img src="{{ asset('/img/avatar.png') }}" class="img-circle" alt="User Image" />
-                                <p>
-                                    Alexander Pierce - Web Developer
-                                    <small>Member since Nov. 2012</small>
-                                </p>
-                            </li>
-                            <!-- Menu Footer-->
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-default btn-flat">个人资料</a>
-                                </div>
-                                <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">退出</a>
-                                </div>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
+
+            @if (Auth::guest())
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li><a href="{{ url('/auth/login') }}">登录</a></li>
+                        <li><a href="{{ url('/auth/register') }}">注册</a></li>
+                    </ul>
+                </div>
+            @else
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="{{ asset('/img/avatar.png') }}" class="user-image" alt="User Image"/>
+                                <span class="hidden-xs">{{ Auth::user()->name }}</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="{{ asset('/img/avatar.png') }}" class="img-circle" alt="User Image" />
+                                    <p>
+                                        Alexander Pierce - Web Developer
+                                        <small>Member since Nov. 2012</small>
+                                    </p>
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="#" class="btn btn-default btn-flat">个人资料</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="{{ url('/auth/logout') }}" class="btn btn-default btn-flat">退出</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            @endif
         </nav>
     </header>
 
