@@ -5,17 +5,17 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li  >
-                <a href="#">
+                <a href="{{ url('/') }}">
                     <i class="fa fa-dashboard"></i> <span>首页</span>
                 </a>
             </li>
             <li class="treeview">
-                <a href="#">
+                <a href="{{ url('/') }}">
                     <i class="fa fa-files-o"></i>
                     <span>课件</span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i>最新课件</a></li>
+                    <li><a href="{{ url('/item') }}"><i class="fa fa-circle-o"></i>最新课件</a></li>
                 </ul>
             </li>
             <li>
@@ -82,7 +82,7 @@
                     <i class="fa fa-envelope"></i> <span>Mailbox</span>
                     <small class="label pull-right bg-yellow">12</small>
                 </a>
-            </li> 
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->
