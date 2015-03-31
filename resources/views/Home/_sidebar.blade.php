@@ -57,7 +57,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#">
+                <a href="{{ url('/news') }}">
                     <i class="fa fa-th"></i> <span>新闻中心</span>
                 </a>
             </li>
@@ -65,7 +65,7 @@
 
 
             <li  >
-                <a href="#">
+                <a href="{{ url('/forum') }}">
                     <i class="fa fa-edit"></i> <span>论坛</span>
                 </a>
 
@@ -73,7 +73,7 @@
 
 
             <li>
-                <a href="#">
+                <a href="{{ url('/mailbox') }}">
                     <i class="fa fa-envelope"></i> <span>站内信</span>
                 </a>
             </li>
