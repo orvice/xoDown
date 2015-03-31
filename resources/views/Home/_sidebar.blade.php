@@ -4,16 +4,31 @@
     <section class="sidebar">
 
         <!-- Sidebar user panel -->
-        <div class="user-panel">
-            <div class="pull-left image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
-            </div>
-            <div class="pull-left info">
-                <p>Alexander Pierce</p>
 
-                <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        @if (Auth::guest())
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="{{ asset('/img/avatar.png') }}" class="img-circle" alt="User Image" />
+                </div>
+                <div class="pull-left info">
+                    <p>游客</p>
+                </div>
             </div>
-        </div>
+        @else
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="{{ asset('/img/avatar.png') }}" class="img-circle" alt="User Image" />
+                </div>
+                <div class="pull-left info">
+                    <p>{{ Auth::user()->name }}</p>
+
+                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                </div>
+            </div>
+        @endif
+
+
+
         <!-- search form -->
         <form action="#" method="get" class="sidebar-form">
             <div class="input-group">
@@ -26,6 +41,7 @@
 
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
+            <li class="header">导航</li>
             <li  >
                 <a href="{{ url('/') }}">
                     <i class="fa fa-dashboard"></i> <span>首页</span>
