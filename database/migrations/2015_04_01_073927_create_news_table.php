@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePostsTable extends Migration {
+class CreateNewsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,14 @@ class CreatePostsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('posts', function(Blueprint $table)
+		Schema::create('news', function(Blueprint $table)
 		{
             $table->increments('id');
-            $table->text('body');
-            $table->integer('user_id')->index();
-            $table->integer('topic_id')->index(); 
+            $table->string('title');
+            $table->string('slug')->nullable();
+            $table->text('body')->nullable();
+            $table->string('image')->nullable();
+            $table->integer('user_id');
             $table->timestamps();
 		});
 	}
@@ -29,7 +31,7 @@ class CreatePostsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('posts');
+		Schema::drop('news');
 	}
 
 }
