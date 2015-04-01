@@ -10,11 +10,18 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-
+//home and item
 Route::group(['prefix' => '/', 'namespace' => 'Home'], function()
 {
     Route::get('/', 'HomeController@index');
     Route::get('item', 'ItemListController@index');
+});
+
+//forum
+Route::group(['prefix' => '/forum', 'namespace' => 'Forum'], function()
+{
+    Route::get('/', 'ForumHomeController@index');
+    Route::get('/topic', 'ItemListController@index');
 });
 
 Route::get('home', 'HomeController@index');
