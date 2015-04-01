@@ -24,7 +24,10 @@ Route::group(['prefix' => '/forum', 'namespace' => 'Forum'], function()
     Route::get('/topic', 'TopicController@index');
 });
 
-Route::get('home', 'HomeController@index');
+Route::group(['prefix' => '/home', 'namespace' => 'Home'], function()
+{
+    Route::get('/', 'HomeController@index'); 
+});
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
