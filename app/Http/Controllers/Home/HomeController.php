@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Xo\Item\Item;
+use App\User;
 
 class HomeController extends Controller {
 
@@ -15,8 +16,12 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+        $item = Item::All()->take(8);
+
+
+
         return view('Home.Home',[
-            'ItemList' => Item::All()
+            'ItemList' => $item
         ]);
 	}
 
