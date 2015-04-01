@@ -83,7 +83,7 @@
                                 @foreach($ItemList as $item)
                                     <tr>
                                         <td><a href="{{ $item->id }}">{{ $item->item_title }}</a></td>
-                                        <td>{{ $item->author }}</td>
+                                        <td>{{ $item->author_name['name'] }}</td>
                                         <td>{{ $item->item_cate_id }}</td>
                                         <td><div class="sparkbar" data-color="#00a65a" data-height="20">{{ $item->item_date }}</div></td>
                                     </tr>

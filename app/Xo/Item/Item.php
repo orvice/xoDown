@@ -16,9 +16,9 @@ class Item extends Model {
 
     public function author_name()
     {
-        // return $this->hasOne('App\User','id','id');
-         $author_id = $this->get()->author;
-        return $author_id;
+         return $this->belongsTo('App\User','author');
+        // $author_id = $this->get()->author;
+        // return $author_id;
     }
 
 }
