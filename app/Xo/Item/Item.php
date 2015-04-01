@@ -1,6 +1,7 @@
 <?php namespace App\Xo\Item;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
 
 class Item extends Model {
 
@@ -11,5 +12,13 @@ class Item extends Model {
      * @var string
      */
     protected $table = 'xo_item';
+
+
+    public function author_name()
+    {
+        // return $this->hasOne('App\User','id','id');
+         $author_id = $this->get()->author;
+        return $author_id;
+    }
 
 }
