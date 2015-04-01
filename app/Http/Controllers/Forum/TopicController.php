@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class TopicHomeController extends Controller {
+class TopicController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
