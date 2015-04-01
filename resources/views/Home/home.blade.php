@@ -22,7 +22,7 @@
                     <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">课件数</span>
-                        <span class="info-box-number">90</span>
+                        <span class="info-box-number">{{ $Count['item'] }}</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div><!-- /.col -->
@@ -53,7 +53,7 @@
                     <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">注册用户</span>
-                        <span class="info-box-number">2,000</span>
+                        <span class="info-box-number">{{ $Count['user'] }}</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div><!-- /.col -->

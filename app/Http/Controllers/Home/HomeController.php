@@ -16,12 +16,13 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
+        $count['item'] = Item::get()->count();
+        $count['user'] = User::get()->count();
         $item = Item::All()->take(8);
 
-
-
         return view('Home.Home',[
-            'ItemList' => $item
+            'ItemList' => $item,
+            "Count"  => $count
         ]);
 	}
 
