@@ -14,8 +14,12 @@ class CreateCatesTable extends Migration {
 	{
 		Schema::create('cates', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->timestamps();
+            $table->increments('id');
+            $table->string('name')->index();
+            $table->string('slug')->nullable()->index();
+            $table->text('description')->nullable();
+            $table->integer('item_count')->default(0)->index();
+            $table->timestamps();
 		});
 	}
 

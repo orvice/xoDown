@@ -9,6 +9,6 @@ class Cate extends Model {
      *
      * @var string
      */
-    protected $table = 'xo_cate';
+    // protected $table = 'xo_cate';
 
 }
