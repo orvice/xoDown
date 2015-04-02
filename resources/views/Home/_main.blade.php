@@ -96,7 +96,7 @@
 
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 2.0
+            <b>Made with ♥ </b>
         </div>
         <strong>Copyright &copy; 2015 <a href="#">课件管理系统</a>.</strong> All rights reserved.
     </footer>
