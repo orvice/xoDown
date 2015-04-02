@@ -49,8 +49,17 @@ class ItemController extends Controller {
 	 */
 	public function show($id)
 	{
-		//
+        //
+        $item = Item::find($id);
+        return view('Item.show',[
+            'item' => $item
+        ]);
 	}
+
+    public function cate($id)
+    {
+        //
+    }
 
 	/**
 	 * Show the form for editing the specified resource.

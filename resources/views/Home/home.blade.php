@@ -84,7 +84,7 @@
                                     <tr>
                                         <td><a href="{{ url('/item/show/'.$item->id) }}">{{ $item->title }}</a></td>
                                         <td>{{ $item->belongsToUser['name'] }}</td>
-                                        <td>{{ $item->cate_id }}</td>
+                                        <td> <a href="{{ url('/item/cate/'.$item->belongsToCate['id'] ) }}">{{ $item->belongsToCate['name'] }}</a> </td>
                                         <td><div class="sparkbar" data-color="#00a65a" data-height="20">{{ $item->created_at }}</div></td>
                                     </tr>
                                 @endforeach

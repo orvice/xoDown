@@ -30,6 +30,7 @@ Route::group(['prefix' => '/item', 'namespace' => 'Item'], function()
 {
     Route::get('/', 'ItemController@index');
     Route::get('/show/{id}', 'ItemController@show');
+    Route::get('/cate/{id}', 'ItemController@cate');
 });
 
 Route::group(['prefix' => '/home', 'namespace' => 'Home'], function()

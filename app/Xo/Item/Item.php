@@ -12,4 +12,9 @@ class Item extends Model {
          return $this->belongsTo('App\User','author_id');
     }
 
+    public function belongsToCate()
+    {
+        return $this->belongsTo('App\Xo\Item\Cate','cate_id');
+    }
+
 }
