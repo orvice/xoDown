@@ -14,8 +14,16 @@ class CreateItemsTable extends Migration {
 	{
 		Schema::create('items', function(Blueprint $table)
 		{
-			$table->increments('id');
-			$table->timestamps();
+            $table->increments('id');
+            $table->string('title')->index();
+            $table->text('body');
+            $table->integer('author_id')->index();
+            $table->string('url');
+            $table->integer('cate_id')->index();
+            $table->integer('comment_count')->default(0)->index();
+            $table->integer('view_count')->default(0)->index();
+            $table->softDeletes();
+            $table->timestamps();
 		});
 	}
 
