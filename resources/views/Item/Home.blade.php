@@ -44,7 +44,7 @@
                         </div><!-- /.table-responsive -->
                     </div><!-- /.box-body -->
                     <div class="box-footer clearfix">
-                        <a href="{{ url('/item') }}" class="btn btn-sm btn-default btn-flat pull-right">查看所有课件</a>
+                       
                     </div><!-- /.box-footer -->
                 </div><!-- /.box -->
             </div><!-- /.col -->
