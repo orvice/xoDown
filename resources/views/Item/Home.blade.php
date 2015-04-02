@@ -16,7 +16,7 @@
             <div class="box">
                 @foreach($ItemList as $item)
                     <p>
-                        <a href="{{ $item->id }}" >{{ $item->item_title }}</a>
+                        <a href="   {{ url('/item/info/'.$item->id) }}   " >{{ $item->title }}</a>
                     </p>
                 @endforeach
 
