@@ -44,7 +44,7 @@
                         </div><!-- /.table-responsive -->
                     </div><!-- /.box-body -->
                     <div class="box-footer clearfix">
-                       
+
                     </div><!-- /.box-footer -->
                 </div><!-- /.box -->
             </div><!-- /.col -->

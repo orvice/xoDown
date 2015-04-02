@@ -98,7 +98,7 @@
         <div class="pull-right hidden-xs">
             <b>Version</b> 2.0
         </div>
-        <strong>Copyright &copy; 2014-2015 <a href="#">orvice Oz</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2015 <a href="#">课件管理系统</a>.</strong> All rights reserved.
     </footer>
 </div><!-- ./wrapper -->
 
