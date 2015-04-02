@@ -33,6 +33,13 @@ Route::group(['prefix' => '/item', 'namespace' => 'Item'], function()
     Route::get('/cate/{id}', 'ItemController@cate');
 });
 
+//news
+Route::group(['prefix' => '/news', 'namespace' => 'News'], function()
+{
+    Route::get('/', 'NewsController@index');
+    Route::get('/show/{id}', 'NewsController@show');
+});
+
 //teacher
 Route::group(['prefix' => '/teacher', 'middleware' => 'auth','namespace' => 'Item'], function()
 {
