@@ -8,22 +8,57 @@
                 <small>List</small>
             </h1>
         </section>
-
         <!-- Main content -->
         <section class="content">
+        <!-- Main row -->
+        <div class="row">
+            <!-- Left col -->
+            <div class="col-md-8">
+                <!-- TABLE: LATEST ITEMS -->
+                <div class="box box-info">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">最新课件</h3>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="table-responsive">
+                            <table class="table no-margin">
+                                <thead>
+                                <tr>
+                                    <th>课件</th>
+                                    <th>作者</th>
+                                    <th>分类</th>
+                                    <th>发布时间</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($ItemList as $item)
+                                    <tr>
+                                        <td><a href="{{ $item->id }}">{{ $item->title }}</a></td>
+                                        <td>{{ $item->belongsToUser['name'] }}</td>
+                                        <td>{{ $item->cate_id }}</td>
+                                        <td><div class="sparkbar" data-color="#00a65a" data-height="20">{{ $item->created_at }}</div></td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div><!-- /.table-responsive -->
+                    </div><!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <a href="{{ url('/item') }}" class="btn btn-sm btn-default btn-flat pull-right">查看所有课件</a>
+                    </div><!-- /.box-footer -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
 
-            <!-- Default box -->
-            <div class="box">
-                @foreach($ItemList as $item)
-                    <p>
-                        <a href="   {{ url('/item/info/'.$item->id) }}   " >{{ $item->title }}</a>
-                    </p>
-                @endforeach
+            <div class="col-md-4">
+                <!-- PRODUCT LIST -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">分类</h3>
+                    </div><!-- /.box-header -->
 
-                <div class="box-footer">
-
-                </div><!-- /.box-footer-->
-            </div><!-- /.box -->
-
-        </section><!-- /.content -->
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        </section>
 @endsection
