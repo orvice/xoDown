@@ -9,7 +9,7 @@ class Item extends Model {
 
     public function belongsToUser()
     {
-         return $this->belongsTo('App\User','author_id'); 
+         return $this->belongsTo('App\User','author_id');
     }
 
 }
