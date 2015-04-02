@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Xo\News\News;
 
 class NewsController extends Controller {
 
@@ -15,6 +16,9 @@ class NewsController extends Controller {
 	public function index()
 	{
 		//
+        return view('News.Home',[
+            'news' => News::All()
+        ]);
 	}
 
 	/**
@@ -46,6 +50,11 @@ class NewsController extends Controller {
 	public function show($id)
 	{
 		//
+        //
+        $news = News::find($id);
+        return view('News.show',[
+            'news' => $news
+        ]);
 	}
 
 	/**
