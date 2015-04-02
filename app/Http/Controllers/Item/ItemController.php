@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers\Home;
+<?php namespace App\Http\Controllers\Item;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Xo\Item\Item;
 
-class ItemListController extends Controller {
+class ItemController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ItemListController extends Controller {
 	 */
 	public function index()
 	{
-		//
-        return view('Home.ItemList',[
+        //
+        return view('Item.Home',[
             'ItemList' => Item::All()
         ]);
 	}
