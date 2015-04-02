@@ -39,7 +39,7 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">分类</h3>
                     </div><!-- /.box-header -->
-
+                    <div class="box-body">
                     </div><!-- /.box-body -->
                 </div><!-- /.box -->
             </div><!-- /.col -->

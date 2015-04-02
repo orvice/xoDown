@@ -5,7 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Xo\Item\Item;
-
+use App\Xo\Item\Cate;
 class ItemController extends Controller {
 
 	/**
@@ -17,6 +17,7 @@ class ItemController extends Controller {
 	{
         //
         return view('Item.Home',[
+            'cate'  => Cate::All(),
             'ItemList' => Item::All()
         ]);
 	}
