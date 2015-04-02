@@ -25,12 +25,19 @@ Route::group(['prefix' => '/forum', 'namespace' => 'Forum'], function()
     Route::get('/topic/new', 'TopicController@new');
 });
 
-//itme
+//item
 Route::group(['prefix' => '/item', 'namespace' => 'Item'], function()
 {
     Route::get('/', 'ItemController@index');
     Route::get('/show/{id}', 'ItemController@show');
     Route::get('/cate/{id}', 'ItemController@cate');
+});
+
+//teacher
+Route::group(['prefix' => '/teacher', 'middleware' => 'auth','namespace' => 'Item'], function()
+{
+    Route::get('/new', 'ItemController@create');
+    Route::get('/edit/{id}', 'ItemController@edit');
 });
 
 Route::group(['prefix' => '/home', 'namespace' => 'Home'], function()
