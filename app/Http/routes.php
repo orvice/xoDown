@@ -50,6 +50,8 @@ Route::group(['prefix' => '/teacher', 'middleware' => 'auth','namespace' => 'Ite
 //admin
 Route::group(['prefix' => '/admin', 'middleware' => 'auth','namespace' => 'Admin'], function()
 {
+    Route::get('/', 'HomeController@create');
+    Route::get('/news', 'NewsController@index');
     Route::get('/news/new', 'NewsController@create');
     Route::get('/news/edit/{id}', 'NewsController@edit');
 });
