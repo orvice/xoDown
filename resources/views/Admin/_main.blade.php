@@ -84,7 +84,7 @@
 
     <!-- =============================================== -->
 
-    @extends('Home._sidebar')
+    @extends('Admin._sidebar')
 
     <!-- =============================================== -->
     <!-- Content Wrapper. Contains page content -->

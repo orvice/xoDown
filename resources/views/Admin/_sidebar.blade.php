@@ -2,9 +2,7 @@
 <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-
         <!-- Sidebar user panel -->
-
         @if (Auth::guest())
             <div class="user-panel">
                 <div class="pull-left image">
@@ -39,10 +37,10 @@
             <li class="treeview">
                 <a href="{{ url('/') }}">
                     <i class="fa fa-files-o"></i>
-                    <span>课件</span>
+                    <span>课件管理</span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{ url('/item') }}"><i class="fa fa-circle-o"></i>最新课件</a></li>
+                    <li><a href="{{ url('/admin/item/cate') }}"><i class="fa fa-circle-o"></i>课件分类</a></li>
                 </ul>
             </li>
 
@@ -54,20 +52,10 @@
 
             <li>
                 <a href="{{ url('/forum') }}">
-                    <i class="fa fa-edit"></i> <span>论坛</span>
-                </a>
-
-            </li>
-
-            @if (Auth::guest())
-
-            @else
-            <li>
-                <a href="{{ url('/user/mailbox') }}">
-                    <i class="fa fa-envelope"></i> <span>站内信</span>
+                    <i class="fa fa-edit"></i> <span>论坛管理</span>
                 </a>
             </li>
-            @endif
+
         </ul>
     </section>
     <!-- /.sidebar -->
