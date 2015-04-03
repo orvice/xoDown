@@ -29,6 +29,7 @@ Route::group(['prefix' => '/forum', 'namespace' => 'Forum'], function()
 Route::group(['prefix' => '/item', 'namespace' => 'Item'], function()
 {
     Route::get('/', 'ItemController@index');
+    Route::get('/search', 'ItemController@search');
     Route::get('/show/{id}', 'ItemController@show');
     Route::get('/cate/{id}', 'ItemController@cate');
 });

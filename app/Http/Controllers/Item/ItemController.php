@@ -57,6 +57,10 @@ class ItemController extends Controller {
         ]);
 	}
 
+    public function search(){
+
+    }
+
     public function cate($id)
     {
         //
