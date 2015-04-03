@@ -40,6 +40,12 @@ Route::group(['prefix' => '/news', 'namespace' => 'News'], function()
     Route::get('/show/{id}', 'NewsController@show');
 });
 
+//usercenter
+Route::group(['prefix' => '/user', 'middleware' => 'auth','namespace' => 'User'], function()
+{
+    Route::get('/', 'HomeController@index');
+});
+
 //teacher
 Route::group(['prefix' => '/teacher', 'middleware' => 'auth','namespace' => 'Item'], function()
 {
