@@ -31,7 +31,7 @@
                     <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">论坛帖子</span>
-                        <span class="info-box-number">41,410</span>
+                        <span class="info-box-number">{{ $Count['post'] }}</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div><!-- /.col -->
@@ -44,7 +44,7 @@
                     <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">新闻</span>
-                        <span class="info-box-number">760</span>
+                        <span class="info-box-number">{{ $Count['news'] }}</span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
             </div><!-- /.col -->
@@ -104,7 +104,7 @@
                     <span class="info-box-icon"><i class="ion ion-ios-pricetag-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">分类</span>
-                        <span class="info-box-number">4</span>
+                        <span class="info-box-number">{{ $Count['cate'] }}</span>
                         <div class="progress">
                             <div class="progress-bar" style="width: 50%"></div>
                         </div>
