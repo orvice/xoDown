@@ -16,7 +16,7 @@ class NewsController extends Controller {
 	public function index()
 	{
 		//
-        return view('News.Home',[
+        return view('Admin.News',[
             'news' => News::All()
         ]);
 	}
