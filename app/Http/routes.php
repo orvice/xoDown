@@ -45,6 +45,7 @@ Route::group(['prefix' => '/news', 'namespace' => 'News'], function()
 Route::group(['prefix' => '/user', 'middleware' => 'auth','namespace' => 'User'], function()
 {
     Route::get('/', 'HomeController@index');
+    Route::get('/profile/{id}', 'UserController@profile');
 });
 
 //teacher
