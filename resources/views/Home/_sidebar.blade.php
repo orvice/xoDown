@@ -25,9 +25,7 @@
                     <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
                 </div>
             </div>
-        @endif
-
-
+        @endif 
 
         <!-- search form -->
         <form action="#" method="get" class="sidebar-form">
@@ -62,21 +60,19 @@
                 </a>
             </li>
 
-
-
             <li  >
                 <a href="{{ url('/forum') }}">
                     <i class="fa fa-edit"></i> <span>论坛</span>
                 </a>
-
             </li>
 
-
-            <li>
-                <a href="{{ url('/mailbox') }}">
-                    <i class="fa fa-envelope"></i> <span>站内信</span>
-                </a>
-            </li>
+            @if (Auth::check())
+                <li>
+                    <a href="{{ url('/user/mailbox') }}">
+                        <i class="fa fa-envelope"></i> <span>站内信</span>
+                    </a>
+                </li>
+            @endif
         </ul>
     </section>
     <!-- /.sidebar -->
