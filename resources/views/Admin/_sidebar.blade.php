@@ -27,7 +27,6 @@
             </div>
         @endif
 
-
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu">
             <li class="header">导航</li>
@@ -36,6 +35,7 @@
                     <i class="fa fa-dashboard"></i> <span>首页</span>
                 </a>
             </li>
+
             <li class="treeview">
                 <a href="{{ url('/') }}">
                     <i class="fa fa-files-o"></i>
@@ -45,27 +45,29 @@
                     <li><a href="{{ url('/item') }}"><i class="fa fa-circle-o"></i>最新课件</a></li>
                 </ul>
             </li>
+
             <li>
                 <a href="{{ url('/admin/news') }}">
                     <i class="fa fa-th"></i> <span>新闻管理</span>
                 </a>
             </li>
 
-
-
-            <li  >
+            <li>
                 <a href="{{ url('/forum') }}">
                     <i class="fa fa-edit"></i> <span>论坛</span>
                 </a>
 
             </li>
 
+            @if (Auth::guest())
 
+            @else
             <li>
-                <a href="{{ url('/mailbox') }}">
+                <a href="{{ url('/user/mailbox') }}">
                     <i class="fa fa-envelope"></i> <span>站内信</span>
                 </a>
             </li>
+            @endif
         </ul>
     </section>
     <!-- /.sidebar -->
