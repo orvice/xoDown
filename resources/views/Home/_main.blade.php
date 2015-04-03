@@ -61,14 +61,14 @@
                                 <li class="user-header">
                                     <img src="{{ asset('/img/avatar.png') }}" class="img-circle" alt="User Image" />
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        {{ Auth::user()->name }} - Web Developer
+                                        <small>注册时间 {{ Auth::user()->created_at }}</small>
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">个人资料</a>
+                                        <a href="{{ url('/user') }}" class="btn btn-default btn-flat">用户中心</a>
                                     </div>
                                     <div class="pull-right">
                                         <a href="{{ url('/auth/logout') }}" class="btn btn-default btn-flat">退出</a>
