@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+                    <span class="info-box-icon bg-aqua"><i class="fa fa-files-o"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">课件数</span>
                         <span class="info-box-number">{{ $Count['item'] }}</span>
@@ -28,7 +28,7 @@
             </div><!-- /.col -->
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
+                    <span class="info-box-icon bg-red"><i class="fa fa-comments-o"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">论坛帖子</span>
                         <span class="info-box-number">{{ $Count['post'] }}</span>
@@ -41,7 +41,7 @@
 
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="info-box">
-                    <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
+                    <span class="info-box-icon bg-green"><i class="fa fa-flag-o"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">新闻</span>
                         <span class="info-box-number">{{ $Count['news'] }}</span>
