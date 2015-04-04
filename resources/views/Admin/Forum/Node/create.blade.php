@@ -25,7 +25,7 @@
                     </div>
                 @endif
                 <div class="box box-info">
-                    <form action="{{ URL('admin/news/') }}" method="POST">
+                    <form action="{{ URL('admin/forum/node/') }}" method="POST">
                     <div class="box-body">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
