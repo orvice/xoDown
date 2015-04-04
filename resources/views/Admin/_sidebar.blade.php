@@ -50,10 +50,16 @@
                 </a>
             </li>
 
-            <li>
-                <a href="{{ url('/forum') }}">
+            <li class="treeview"> 
+
+                <a href="{{ url('/admin/forum') }}">
                     <i class="fa fa-edit"></i> <span>论坛管理</span>
                 </a>
+
+                <ul class="treeview-menu">
+                    <li><a href="{{ url('/admin/forum/node') }}"><i class="fa fa-circle-o"></i>论坛节点</a></li>
+                </ul>
+
             </li>
 
         </ul>
