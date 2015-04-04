@@ -50,7 +50,7 @@
                 </a>
             </li>
 
-            <li class="treeview"> 
+            <li class="treeview">
 
                 <a href="{{ url('/admin/forum') }}">
                     <i class="fa fa-edit"></i> <span>论坛管理</span>

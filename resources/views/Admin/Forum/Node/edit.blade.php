@@ -4,8 +4,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            新闻中心
-            <small>News</small>
+            论坛节点
+            <small>Forum Nodes</small>
         </h1>
     </section>
     <!-- Main content -->
@@ -25,22 +25,23 @@
                     </div>
                 @endif
                 <div class="box box-info">
-                    <form action="{{ URL('admin/forum/node') }}" method="POST">
+                    <form action="{{ URL('admin/forum/node/'.$node->id) }}" method="POST">
                     <div class="box-body">
+                        <input name="_method" type="hidden" value="PUT">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">节点名字</label>
-                            <input type="text" name="name" class="form-control" id="name" >
+                            <input type="text" name="name" class="form-control" id="name" value="{{ $node->name }}">
                         </div>
 
                         <div class="form-group">
                             <label>节点描述</label>
-                            <textarea class="form-control" name="description" rows="3"></textarea>
+                            <textarea class="form-control" name="description" rows="3">{{ $node->description }}</textarea>
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">添加节点</button>
+                            <button type="submit" class="btn btn-primary">提交修改</button>
                         </div>
 
                     </div>

@@ -99,7 +99,7 @@ class NewsController extends Controller {
         $news->body = Input::get('body');
         $news->user_id = Auth::user()->id;
         if ($news->save()) {
-            return Redirect::to('admin/news');
+            return Redirect::to('admin/news')->withInput()->withSuccess('保存成功！');
         } else {
             return Redirect::back()->withInput()->withErrors('保存失败！');
         }
