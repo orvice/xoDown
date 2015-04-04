@@ -2,9 +2,9 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use App\Xo\News\News;
+use Redirect, Input, Auth;
 
 class NewsController extends Controller {
 
@@ -16,7 +16,7 @@ class NewsController extends Controller {
 	public function index()
 	{
 		//
-        return view('Admin.News',[
+        return view('Admin.News.Home',[
             'news' => News::All()
         ]);
 	}
@@ -29,6 +29,7 @@ class NewsController extends Controller {
 	public function create()
 	{
 		//
+        return view('Admin.News.create');
 	}
 
 	/**
@@ -36,9 +37,22 @@ class NewsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+        $this->validate($request, [
+            'title' => 'required|unique:news|max:255',
+            'body' => 'required',
+        ]);
+        $news = new News;
+        $news->title = Input::get('title');
+        $news->body = Input::get('body');
+        $news->user_id = Auth::user()->id;
+        if ($news->save()) {
+            return Redirect::to('admin/news');
+        } else {
+            return Redirect::back()->withInput()->withErrors('保存失败！');
+        }
 	}
 
 	/**
@@ -61,6 +75,10 @@ class NewsController extends Controller {
 	public function edit($id)
 	{
 		//
+        $news = News::find($id);
+        return view('Admin.News.edit',[
+            'news' => $news
+        ]);
 	}
 
 	/**
@@ -69,9 +87,22 @@ class NewsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request,$id)
 	{
 		//
+        $this->validate($request, [
+            'title' => 'required|unique:news,title,'.$id.'|max:255',
+            'body' => 'required',
+        ]);
+        $news = News::find($id);
+        $news->title = Input::get('title');
+        $news->body = Input::get('body');
+        $news->user_id = Auth::user()->id;
+        if ($news->save()) {
+            return Redirect::to('admin/news');
+        } else {
+            return Redirect::back()->withInput()->withErrors('保存失败！');
+        }
 	}
 
 	/**
@@ -83,6 +114,9 @@ class NewsController extends Controller {
 	public function destroy($id)
 	{
 		//
+        $news = News::find($id);
+        $news->delete();
+        return Redirect::to('admin/news');
 	}
 
 }
