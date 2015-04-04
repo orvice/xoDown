@@ -60,6 +60,8 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth','namespace' => 'Admin
 {
     Route::get('/', 'HomeController@index');
     Route::resource('news', 'NewsController');
+    Route::resource('/item/cate', 'CateController');
+    Route::resource('/forum/node', 'NodeController');
 });
 
 Route::group(['prefix' => '/home', 'namespace' => 'Home'], function()
