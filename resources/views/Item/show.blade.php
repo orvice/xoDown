@@ -28,7 +28,16 @@
 
                     </div><!-- /.box-body -->
                     <div class="box-footer clearfix">
-                        <a href="{{ url('/item') }}" class="btn btn-sm btn-default btn-flat pull-right">查看所有课件</a>
+                        <form action="{{ URL('item/') }}" method="POST">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <div class="form-group">
+                            <label>评论</label>
+                            <textarea class="form-control" name="body" rows="3"></textarea>
+                        </div>
+                        <div class="box-footer">
+                            <button type="submit" class="btn btn-primary">提交评论</button>
+                        </div>
+                        </form>
                     </div><!-- /.box-footer -->
                 </div><!-- /.box -->
             </div><!-- /.col -->
