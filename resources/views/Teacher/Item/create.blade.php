@@ -4,8 +4,8 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            课件分类
-            <small>Item Categories</small>
+            课件管理
+            <small>Item</small>
         </h1>
     </section>
     <!-- Main content -->
@@ -25,22 +25,36 @@
                     </div>
                 @endif
                 <div class="box box-info">
-                    <form action="{{ URL('admin/item/cate/') }}" method="POST">
+                    <form action="{{ URL('teacher/item') }}" method="POST">
                     <div class="box-body">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">分类名字</label>
-                            <input type="text" name="name" class="form-control" id="name" >
+                            <label for="exampleInputEmail1">课件名字</label>
+                            <input type="text" name="title" class="form-control" id="title" >
                         </div>
 
                         <div class="form-group">
-                            <label>分类描述</label>
-                            <textarea class="form-control" name="description" id="description" rows="3"></textarea>
+                            <label>课件分类</label>
+                            <select name="cate_id" >
+                                @foreach($cates as $cate)
+                                    <option value="{{$cate->id}}">{{$cate->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">课件下载地址</label>
+                            <input type="text" name="url" class="form-control" id="url" >
+                        </div>
+
+                        <div class="form-group">
+                            <label>课件描述</label>
+                            <textarea class="form-control" name="body" id="body" rows="3"></textarea>
                         </div>
 
                         <div class="box-footer">
-                            <button type="submit" class="btn btn-primary">添加分类</button>
+                            <button type="submit" class="btn btn-primary">添加课件</button>
                         </div>
 
                     </div>

@@ -33,6 +33,9 @@ class ItemController extends Controller {
 	public function create()
 	{
 		//
+        return view('Teacher.Item.create',[
+            'cates' => Cate::All()
+        ]);
 	}
 
 	/**
@@ -40,9 +43,26 @@ class ItemController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'body' => 'required',
+            'cate_id' => 'required',
+            'url' => 'required',
+        ]);
+        $item = new Item;
+        $item->title = Input::get('title');
+        $item->body = Input::get('body');
+        $item->cate_id = Input::get('cate_id');
+        $item->author_id = Auth::user()->id;
+        $item->url = Input::get('url');
+        if ($item->save()) {
+            return Redirect::to('/teacher');
+        } else {
+            return Redirect::back()->withInput()->withErrors('添加失败！');
+        }
 	}
 
 	/**
@@ -87,6 +107,9 @@ class ItemController extends Controller {
 	public function destroy($id)
 	{
 		//
+        $item = Item::find($id);
+        $item->delete();
+        return Redirect::to('teacher');
 	}
 
 }
