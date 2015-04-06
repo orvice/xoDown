@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Xo\Forum\Topic;
+use App\Xo\Forum\Node;
 
 class ForumHomeController extends Controller {
 
@@ -17,7 +18,8 @@ class ForumHomeController extends Controller {
 	{
 		//
         return view('Forum.Home',[
-            'topics' => Topic::All()
+            'topics' => Topic::All(),
+            'nodes' => Node::All()
         ]);
 	}
 

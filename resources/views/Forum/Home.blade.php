@@ -44,6 +44,22 @@
                     </div><!-- /.box-footer -->
                 </div><!-- /.box -->
             </div><!-- /.col -->
+
+            <div class="col-md-4">
+                <!-- PRODUCT LIST -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">导航</h3>
+                    </div><!-- /.box-header -->
+                    <div class="box-body">
+                        <p> <a href="{{ url('/forum/topic/create') }}" class="btn btn-sm btn-info btn-flat ">发帖</a></p>
+                            @foreach($nodes as $node)
+                                <p><a href="{{ url('/forum/node/'.$node->id ) }}">{{$node->name}}</a></p>
+                            @endforeach
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+
         </div><!-- /.row -->
         </section>
 @endsection
