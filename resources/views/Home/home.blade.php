@@ -213,12 +213,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td><a href="#">OR9842</a></td>
-                                    <td>Call of Duty IV</td>
-                                    <td><span class="label label-success">Shipped</span></td>
-                                    <td><div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div></td>
-                                </tr>
+                                @foreach($Topics as $topic)
+                                    <tr>
+                                        <td><a href="{{ url('/forum/topic/'.$topic->id) }}">{{ $topic->title }}</a></td>
+                                        <td><a href="{{ url('/forum/node/'.$topic->belongsToNode['id']) }}">{{ $topic->belongsToNode['name'] }}</a></td>
+                                        <td>{{ $topic->belongsToUser['name'] }}</td>
+                                        <td>{{ $topic->created_at }}</td>
+                                    </tr>
+                                @endforeach
                                 </tbody>
                             </table>
                         </div><!-- /.table-responsive -->

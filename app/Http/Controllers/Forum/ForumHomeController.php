@@ -21,6 +21,14 @@ class ForumHomeController extends Controller {
         ]);
 	}
 
+    public function node($id)
+    {
+        //
+        return view('Forum.Home',[
+            'topics' => Topic::where('node_id','=',$id)->get()
+        ]);
+    }
+
 	/**
 	 * Show the form for creating a new resource.
 	 *

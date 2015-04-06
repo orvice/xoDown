@@ -29,11 +29,13 @@ class HomeController extends Controller {
         $count['post'] = Topic::get()->count()+Post::get()->count();
         $item = Item::All()->take(8);
         $news = News::All()->take(6);
+        $topics = Topic::All()->take(6);
 
         return view('Home.Home',[
             'ItemList' => $item,
             "Count"  => $count,
-            "News"  => $news
+            "News"  => $news,
+            "Topics" => $topics
         ]);
 	}
 

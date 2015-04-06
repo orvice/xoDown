@@ -31,7 +31,7 @@
                                 @foreach($topics as $topic)
                                     <tr>
                                         <td><a href="{{ url('/forum/topic/'.$topic->id) }}">{{ $topic->title }}</a></td>
-                                        <td>{{ $topic->belongsToNode['name'] }}</td>
+                                        <td><a href="{{ url('/forum/node/'.$topic->belongsToNode['id']) }}">{{ $topic->belongsToNode['name'] }}</a></td>
                                         <td>{{ $topic->belongsToUser['name'] }}</td>
                                         <td>{{ $topic->created_at }}</td>
                                     </tr>
