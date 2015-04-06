@@ -4,6 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Xo\Forum\Post;
+use Redirect, Input, Auth;
 
 class PostController extends Controller {
 
@@ -32,9 +34,22 @@ class PostController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+        $this->validate($request, [
+            'body' => 'required',
+            'topic_id' => 'required',
+        ]);
+        $post = new Comment();
+        $comment->content = Input::get('content');
+        $comment->item_id = Input::get('item_id');
+        $comment->user_id = Auth::user()->id;
+        if ($comment->save()) {
+            return Redirect::back();
+        } else {
+            return Redirect::back()->withInput()->withErrors('评论出错了！');
+        }
 	}
 
 	/**

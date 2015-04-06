@@ -16,4 +16,9 @@ class Topic extends Model {
         return $this->belongsTo('App\User','user_id');
     }
 
+    public function Posts()
+    {
+        return $this->hasMany('App\Xo\Forum\Post','topic_id','id');
+    }
+
 }

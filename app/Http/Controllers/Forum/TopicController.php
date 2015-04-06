@@ -67,6 +67,14 @@ class TopicController extends Controller {
 	public function show($id)
 	{
 		//
+        //update count
+        $topic = Topic::find($id);
+        $count = $topic->view_count+1;
+        $topic->view_count = $count;
+        $topic->save();
+        return view('Forum.show',[
+            'topic' => $topic
+        ]);
 	}
 
 	/**
