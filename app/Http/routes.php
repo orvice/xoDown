@@ -21,8 +21,7 @@ Route::group(['prefix' => '/', 'namespace' => 'Home'], function()
 Route::group(['prefix' => '/forum', 'namespace' => 'Forum'], function()
 {
     Route::get('/', 'ForumHomeController@index');
-    Route::get('/topic', 'TopicController@index');
-    Route::get('/topic/new', 'TopicController@new');
+    Route::resource('/topic', 'TopicController');
 });
 
 //item

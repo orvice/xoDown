@@ -224,7 +224,7 @@
                         </div><!-- /.table-responsive -->
                     </div><!-- /.box-body -->
                     <div class="box-footer clearfix">
-                        <a href="{{ url('/forum/new') }}" class="btn btn-sm btn-info btn-flat pull-left">发帖</a>
+                        <a href="{{ url('/forum/topic/create') }}" class="btn btn-sm btn-info btn-flat pull-left">发帖</a>
                         <a href="{{ url('/forum') }}" class="btn btn-sm btn-default btn-flat pull-right">进入论坛</a>
                     </div><!-- /.box-footer -->
                 </div><!-- /.box -->
