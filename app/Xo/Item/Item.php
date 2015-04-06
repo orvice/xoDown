@@ -17,4 +17,9 @@ class Item extends Model {
         return $this->belongsTo('App\Xo\Item\Cate','cate_id');
     }
 
+    public function Comments()
+    {
+        return $this->hasMany('App\Xo\Item\Comment','item_id','id');
+    }
+
 }
