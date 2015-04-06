@@ -58,6 +58,7 @@
                         <h3 class="box-title">其他信息</h3>
                     </div><!-- /.box-header -->
                     <div class="box-body">
+                        <p><a  class="btn btn-success" href="{{$item->url}}">下载此课件</a></p>
                         <p>课件发布时间{{$item->created_at}}</p>
                         <p>最后更新时间{{$item->updated_at}}</p>
                         <p>点击量{{$item->view_count}}</p>
