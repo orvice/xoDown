@@ -4,9 +4,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
-use App\Xo\Item\Item;
-use App\Xo\Item\Cate;
-class ItemController extends Controller {
+use App\Xo\Item\Comment;
+use Redirect, Input, Auth;
+
+class CommentController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,11 +16,7 @@ class ItemController extends Controller {
 	 */
 	public function index()
 	{
-        //
-        return view('Item.Home',[
-            'cate'  => Cate::All(),
-            'ItemList' => Item::All()
-        ]);
+		//
 	}
 
 	/**
@@ -37,9 +34,23 @@ class ItemController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request)
 	{
 		//
+        //
+        $this->validate($request, [
+            'content' => 'required',
+            'item_id' => 'required',
+        ]);
+        $comment = new Comment();
+        $comment->content = Input::get('content');
+        $comment->item_id = Input::get('item_id');
+        $comment->user_id = Auth::user()->id;
+        if ($comment->save()) {
+            return Redirect::back();
+        } else {
+            return Redirect::back()->withInput()->withErrors('评论出错了！');
+        }
 	}
 
 	/**
@@ -50,28 +61,8 @@ class ItemController extends Controller {
 	 */
 	public function show($id)
 	{
-        //update count
-        $item = Item::find($id);
-        $count = $item->view_count+1;
-        $item->view_count = $count;
-        $item->save();
-        return view('Item.show',[
-            'item' => $item
-        ]);
+		//
 	}
-
-    public function search(){
-
-    }
-
-    public function cate($id)
-    {
-        //
-        return view('Item.Home',[
-            'cate'  => Cate::All(),
-            'ItemList' => Item::where('cate_id','=',$id)->get()
-        ]);
-    }
 
 	/**
 	 * Show the form for editing the specified resource.

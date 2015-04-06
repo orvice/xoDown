@@ -6,8 +6,8 @@ class Comment extends Model {
 
 	//
 
-    public function belongToUser(){
-
+    public function belongsToUser(){
+        return $this->belongsTo('App\User','user_id');
     }
 
 }
