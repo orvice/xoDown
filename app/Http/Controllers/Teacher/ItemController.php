@@ -4,6 +4,9 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Xo\Item\Item;
+use App\Xo\Item\Cate;
+use Redirect, Input, Auth;
 
 class ItemController extends Controller {
 
@@ -14,7 +17,12 @@ class ItemController extends Controller {
 	 */
 	public function index()
 	{
-		//
+        //
+        $user_id = Auth::user()->id;
+        return view('Teacher.Item.Home',[
+            'items' => Item::where('author_id','=',$user_id)->get()
+        ]);
+
 	}
 
 	/**
