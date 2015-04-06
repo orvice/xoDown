@@ -28,8 +28,8 @@
                     <div class="box-footer clearfix">
 
                         @foreach ($topic->Posts as $post)
-                            <p><a href="{{ URL('/user/show/'.$post->user_id) }}" >{{ $post->belongsToUser['name'] }} </a>发表于:{{ $comment->created_at }}</p>
-                            <p>{{ $comment->body }}</p>
+                            <p><a href="{{ URL('/user/show/'.$post->user_id) }}" >{{ $post->belongsToUser['name'] }} </a>发表于:{{ $post->created_at }}</p>
+                            <p>{{ $post->body }}</p>
                         @endforeach
 
                        @if(Auth::guest())

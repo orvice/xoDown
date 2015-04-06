@@ -23,6 +23,7 @@ Route::group(['prefix' => '/forum', 'namespace' => 'Forum'], function()
     Route::get('/', 'ForumHomeController@index');
     Route::get('/node/{id}', 'ForumHomeController@node');
     Route::resource('/topic', 'TopicController');
+    Route::resource('/post', 'PostController');
 });
 
 //item

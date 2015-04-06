@@ -41,14 +41,14 @@ class PostController extends Controller {
             'body' => 'required',
             'topic_id' => 'required',
         ]);
-        $post = new Comment();
-        $comment->content = Input::get('content');
-        $comment->item_id = Input::get('item_id');
-        $comment->user_id = Auth::user()->id;
-        if ($comment->save()) {
+        $post = new Post();
+        $post->body = Input::get('body');
+        $post->topic_id = Input::get('topic_id');
+        $post->user_id = Auth::user()->id;
+        if ($post->save()) {
             return Redirect::back();
         } else {
-            return Redirect::back()->withInput()->withErrors('评论出错了！');
+            return Redirect::back()->withInput()->withErrors('出错了！');
         }
 	}
 
