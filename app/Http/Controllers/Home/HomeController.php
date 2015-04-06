@@ -23,14 +23,17 @@ class HomeController extends Controller {
         $count['item'] = Item::get()->count();
         $count['cate'] = Cate::get()->count();
         $count['comment'] = Comment::get()->count();
+        $count['view'] = Item::get()->sum('view_count');
         $count['news'] = News::get()->count();
         $count['user'] = User::get()->count();
         $count['post'] = Topic::get()->count()+Post::get()->count();
         $item = Item::All()->take(8);
+        $news = News::All()->take(6);
 
         return view('Home.Home',[
             'ItemList' => $item,
-            "Count"  => $count
+            "Count"  => $count,
+            "News"  => $news
         ]);
 	}
 
