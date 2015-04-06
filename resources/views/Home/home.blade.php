@@ -114,7 +114,7 @@
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
                 <div class="info-box bg-green">
-                    <span class="info-box-icon"><i class="ion ion-ios-heart-outline"></i></span>
+                    <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">访问量</span>
                         <span class="info-box-number">{{ $Count['view'] }}</span>
@@ -126,19 +126,7 @@
                   </span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
-                <div class="info-box bg-red">
-                    <span class="info-box-icon"><i class="ion ion-ios-cloud-download-outline"></i></span>
-                    <div class="info-box-content">
-                        <span class="info-box-text">数据量</span>
-                        <span class="info-box-number">114GiB</span>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 70%"></div>
-                        </div>
-                  <span class="progress-description">
-                    Size
-                  </span>
-                    </div><!-- /.info-box-content -->
-                </div><!-- /.info-box -->
+                 
                 <div class="info-box bg-aqua">
                     <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
                     <div class="info-box-content">
