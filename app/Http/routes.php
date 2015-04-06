@@ -51,10 +51,9 @@ Route::group(['prefix' => '/user', 'middleware' => 'auth','namespace' => 'User']
 });
 
 //teacher
-Route::group(['prefix' => '/teacher', 'middleware' => 'auth','namespace' => 'Item'], function()
+Route::group(['prefix' => '/teacher', 'middleware' => 'auth','namespace' => 'Teacher'], function()
 {
-    Route::get('/new', 'ItemController@create');
-    Route::get('/edit/{id}', 'ItemController@edit');
+    Route::resource('/', 'ItemController');
 });
 
 //admin
