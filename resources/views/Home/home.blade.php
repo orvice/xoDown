@@ -143,7 +143,7 @@
                     <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
                     <div class="info-box-content">
                         <span class="info-box-text">评论</span>
-                        <span class="info-box-number">163,921</span>
+                        <span class="info-box-number">{{ $Count['comment'] }}</span>
                         <div class="progress">
                             <div class="progress-bar" style="width: 40%"></div>
                         </div>

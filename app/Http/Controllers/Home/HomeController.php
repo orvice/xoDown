@@ -2,10 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Http\Request;
 use App\Xo\Item\Item;
 use App\Xo\Item\Cate;
+use App\Xo\Item\Comment;
 use App\Xo\News\News;
 use App\Xo\Forum\Post;
 use App\Xo\Forum\Topic;
@@ -22,6 +22,7 @@ class HomeController extends Controller {
 	{
         $count['item'] = Item::get()->count();
         $count['cate'] = Cate::get()->count();
+        $count['comment'] = Comment::get()->count();
         $count['news'] = News::get()->count();
         $count['user'] = User::get()->count();
         $count['post'] = Topic::get()->count()+Post::get()->count();
