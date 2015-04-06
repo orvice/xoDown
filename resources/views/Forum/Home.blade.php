@@ -4,8 +4,8 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
             <h1>
-                新闻中心
-                <small>News</small>
+                论坛
+                <small>Forum</small>
             </h1>
         </section>
         <!-- Main content -->
@@ -22,14 +22,18 @@
                                 <thead>
                                 <tr>
                                     <th>标题</th>
+                                    <th>节点</th>
+                                    <th>作者</th>
                                     <th>发布时间</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($news as $news)
+                                @foreach($topics as $topic)
                                     <tr>
-                                        <td><a href="{{ url('/news/show/'.$news->id) }}">{{ $news->title }}</a></td>
-                                        <td><div class="sparkbar" data-color="#00a65a" data-height="20">{{ $news->created_at }}</div></td>
+                                        <td><a href="{{ url('/forum/topic/'.$topic->id) }}">{{ $topic->title }}</a></td>
+                                        <td>{{ $topic->belongsToNode['name'] }}</td>
+                                        <td>{{ $topic->belongsToUser['name'] }}</td>
+                                        <td>{{ $topic->created_at }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>

@@ -49,10 +49,10 @@ class TopicController extends Controller {
         $topic = new Topic;
         $topic->title = Input::get('title');
         $topic->body = Input::get('body');
-        $topic->node_id = Input::get(node_id);
+        $topic->node_id = Input::get('node_id');
         $topic->user_id = Auth::user()->id;
         if ($topic->save()) {
-            return Redirect::back();
+            return Redirect::to('/forum');
         } else {
             return Redirect::back()->withInput()->withErrors('发布失败！');
         }

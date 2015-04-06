@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
+use App\Xo\Forum\Topic;
 
 class ForumHomeController extends Controller {
 
@@ -15,6 +16,9 @@ class ForumHomeController extends Controller {
 	public function index()
 	{
 		//
+        return view('Forum.Home',[
+            'topics' => Topic::All()
+        ]);
 	}
 
 	/**

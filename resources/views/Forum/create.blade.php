@@ -1,11 +1,11 @@
-@extends('Admin._main')
+@extends('Home._main')
 
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            新闻中心
-            <small>News</small>
+            论坛
+            <small>Forum</small>
         </h1>
     </section>
     <!-- Main content -->
