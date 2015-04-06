@@ -1,4 +1,4 @@
-@extends('Admin._main')
+@extends('Teacher._main')
 
 @section('content')
     <!-- Content Header (Page header) -->
