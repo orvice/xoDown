@@ -85,6 +85,12 @@ class ItemController extends Controller {
 	public function edit($id)
 	{
 		//
+        $item = Item::find($id);
+        //
+        return view('Teacher.Item.edit',[
+            'cates' => Cate::All(),
+            'item' => $item
+        ]);
 	}
 
 	/**
@@ -93,9 +99,26 @@ class ItemController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(Request $request,$id)
 	{
 		//
+        $this->validate($request, [
+            'title' => 'required|max:255',
+            'body' => 'required',
+            'cate_id' => 'required',
+            'url' => 'required',
+        ]);
+        $item = Item::find($id);
+        $item->title = Input::get('title');
+        $item->body = Input::get('body');
+        $item->cate_id = Input::get('cate_id');
+        $item->author_id = Auth::user()->id;
+        $item->url = Input::get('url');
+        if ($item->save()) {
+            return Redirect::to('/teacher');
+        } else {
+            return Redirect::back()->withInput()->withErrors('更新失败！');
+        }
 	}
 
 	/**
