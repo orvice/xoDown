@@ -126,7 +126,7 @@
                   </span>
                     </div><!-- /.info-box-content -->
                 </div><!-- /.info-box -->
-                 
+
                 <div class="info-box bg-aqua">
                     <span class="info-box-icon"><i class="ion-ios-chatbubble-outline"></i></span>
                     <div class="info-box-content">
