@@ -50,14 +50,25 @@ class ItemController extends Controller {
             'title' => 'required|max:255',
             'body' => 'required',
             'cate_id' => 'required',
-            'url' => 'required',
+            // 'url' => 'required',
         ]);
         $item = new Item;
         $item->title = Input::get('title');
         $item->body = Input::get('body');
         $item->cate_id = Input::get('cate_id');
         $item->author_id = Auth::user()->id;
-        $item->url = Input::get('url');
+        $file = Input::file('myfile');
+        if($file -> isValid()) {
+            $fileName = $file->getClientOriginalName();
+            $extension = $file->getClientOriginalExtension();
+            $folderName = '/uploads/'.date('Y', time()).'/'.date('Ym', time()).'/';
+            $destinationPath = public_path().$folderName;
+            $safeName = uniqid().'.'.$extension;
+            $file->move($destinationPath, $safeName);
+            $filePath = $folderName.$safeName;
+            $urls = $filePath;
+            $item->url = $urls;
+        }
         if ($item->save()) {
             return Redirect::to('/teacher');
         } else {

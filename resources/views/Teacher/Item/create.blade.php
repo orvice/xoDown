@@ -25,7 +25,7 @@
                     </div>
                 @endif
                 <div class="box box-info">
-                    <form action="{{ URL('teacher/item') }}" method="POST">
+                    <form action="{{ URL('teacher/item') }}" method="POST" enctype="multipart/form-data"  >
                     <div class="box-body">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -44,8 +44,8 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="exampleInputEmail1">课件下载地址</label>
-                            <input type="text" name="url" class="form-control" id="url" >
+                            <label for="exampleInputEmail1">上传课件</label>
+                            <input type="file" name="myfile" />
                         </div>
 
                         <div class="form-group">
