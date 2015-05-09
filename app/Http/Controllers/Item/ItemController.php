@@ -63,7 +63,7 @@ class ItemController extends Controller {
 
     public function search(){
         $keyword = Input::get('key');
-        return view('Item.Home',[
+        return view('Item.search',[
             'cate'  => Cate::All(),
             'ItemList' => Item::where('title','LIKE', '%'.$keyword.'%')->get()
         ]);
