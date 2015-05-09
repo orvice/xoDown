@@ -29,13 +29,13 @@
         <ul class="sidebar-menu">
             <li class="header">导航</li>
             <li  >
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/admin') }}">
                     <i class="fa fa-dashboard"></i> <span>首页</span>
                 </a>
             </li>
 
             <li class="treeview">
-                <a href="{{ url('/') }}">
+                <a href="{{ url('/admin') }}">
                     <i class="fa fa-files-o"></i>
                     <span>课件管理</span>
                 </a>

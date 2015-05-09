@@ -60,7 +60,7 @@
                                 <li class="user-header">
                                     <img src="{{ asset('/img/avatar.png') }}" class="img-circle" alt="User Image" />
                                     <p>
-                                        {{ Auth::user()->name }}  
+                                        {{ Auth::user()->name }}
                                         <small>注册时间 {{ Auth::user()->created_at }}</small>
                                     </p>
                                 </li>
