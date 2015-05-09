@@ -31,7 +31,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        if(Auth::user()->group_id != 1 ){
+        if(Auth::user()->group_id != 2 ){
             return Redirect('/');
         }
 
