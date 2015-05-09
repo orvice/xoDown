@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Xo\Item\Item;
 use App\Xo\Item\Cate;
+use Redirect, Input, Auth;
 class ItemController extends Controller {
 
 	/**
@@ -61,7 +62,11 @@ class ItemController extends Controller {
 	}
 
     public function search(){
-
+        $keyword = Input::get('key');
+        return view('Item.Home',[
+            'cate'  => Cate::All(),
+            'ItemList' => Item::where('title','LIKE', '%'.$keyword.'%')->get()
+        ]);
     }
 
     public function cate($id)
