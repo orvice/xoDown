@@ -27,7 +27,7 @@
 <div class="wrapper">
 
     <header class="main-header">
-        <a href="../../index2.html" class="logo"><b>Home</b></a>
+        <a href="#" class="logo"><b>Home</b></a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
