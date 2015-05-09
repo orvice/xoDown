@@ -66,13 +66,22 @@
                 </a>
             </li>
 
-            @if (Auth::check())
+            @if (Auth::user()['group_id'] == 2 )
                 <li>
-                    <a href="{{ url('/user/mailbox') }}">
-                        <i class="fa fa-envelope"></i> <span>站内信</span>
+                    <a href="{{ url('/admin') }}">
+                        <i class="fa fa-envelope"></i> <span>系统管理</span>
                     </a>
                 </li>
             @endif
+
+            @if (Auth::user()['group_id'] == 1 )
+                <li>
+                    <a href="{{ url('/teacher') }}">
+                        <i class="fa fa-envelope"></i> <span>课件管理</span>
+                    </a>
+                </li>
+            @endif
+
         </ul>
     </section>
     <!-- /.sidebar -->
