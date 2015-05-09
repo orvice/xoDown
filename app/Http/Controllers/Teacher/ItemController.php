@@ -18,6 +18,9 @@ class ItemController extends Controller {
 	public function index()
 	{
         //
+        if(Auth::user()->group_id != 1 ){
+            return Redirect('/');
+        }
         $user_id = Auth::user()->id;
         return view('Teacher.Item.Home',[
             'items' => Item::where('author_id','=',$user_id)->get()

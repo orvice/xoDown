@@ -10,16 +10,31 @@ use App\Xo\News\News;
 use App\Xo\Forum\Post;
 use App\Xo\Forum\Topic;
 use App\User;
+use Redirect, Input, Auth;
 
 class HomeController extends Controller {
 
-	/**
+    public function __construct()
+    {
+        // $this->middleware('auth');
+
+        if(Auth::user()->group_id != 2 ){
+            return Redirect('/');
+        }
+    }
+
+
+    /**
 	 * Display a listing of the resource.
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
+        if(Auth::user()->group_id != 1 ){
+            return Redirect('/');
+        }
+
         $count['item'] = Item::get()->count();
         $count['cate'] = Cate::get()->count();
         $count['news'] = News::get()->count();
